@@ -8,4 +8,7 @@ public interface IOManager {
 
     MenuType chooseFromMenu();
 
+    TaskType chooseTaskType();
+
+    CyclicType chooseCyclicType();
 }

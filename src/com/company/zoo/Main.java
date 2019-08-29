@@ -1,7 +1,6 @@
 package com.company.zoo;
 
 import static com.company.zoo.Texts.WELCOME;
-import static com.company.zoo.Texts.EXIT;
 
 public class Main {
 
@@ -12,8 +11,7 @@ public class Main {
         ioManager.showMessage(WELCOME);
         boolean End;
         do {
-            appManager.play();
-            End = ioManager.getDecision(EXIT);
+            End = appManager.play();
         } while (!End);
     }
 }
