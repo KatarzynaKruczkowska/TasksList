@@ -1,10 +1,11 @@
 package com.company.zoo;
 
 import java.util.Scanner;
+
 import static com.company.zoo.Texts.*;
 import static java.lang.String.format;
 
-public class IOManagerConsole implements IOManager{
+public class IOManagerConsole implements IOManager {
     private final Scanner INPUT = new Scanner(System.in);
     private static final String FORMATTED_MENU = "%d. %s";
 
@@ -45,5 +46,30 @@ public class IOManagerConsole implements IOManager{
             result = getNumber();
         } while (result < 1 || result > MenuType.values().length);
         return MenuType.values()[result - 1];
+    }
+
+    public TaskType chooseTaskType(){
+        showMessage(CHOOSE_TASK_TYPE);
+        for(TaskType taskType : TaskType.values()){
+            showMessage(format(FORMATTED_MENU, taskType.ordinal() + 1, taskType.taskTypeDescription));
+        }
+        int result = 0;
+        do {
+            result = getNumber();
+        } while (result < 1 || result > TaskType.values().length);
+        return TaskType.values()[result - 1];
+    }
+
+    @Override
+    public CyclicType chooseCyclicType() {
+        showMessage(CHOOSE_CYCLIC_TYPE);
+        for(CyclicType cyclicType : CyclicType.values()){
+            showMessage(format(FORMATTED_MENU, cyclicType.ordinal() + 1, cyclicType.cyclicTypeDescription));
+        }
+        int result = 0;
+        do {
+            result = getNumber();
+        } while (result < 1 || result > TaskType.values().length);
+        return CyclicType.values()[result - 1];
     }
 }

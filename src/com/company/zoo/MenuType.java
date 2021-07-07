@@ -10,7 +10,7 @@ public enum MenuType {
 
     public final String menuDescription;
 
-    MenuType(final String menuDescription){
+    MenuType(final String menuDescription) {
         this.menuDescription = menuDescription;
     }
 
